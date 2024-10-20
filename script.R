@@ -67,6 +67,33 @@ group.mean<-summarise(group5, Mean_sepal_length = mean(Sepal.Length))
 group.mean
 
 # Pipe operator: makes it possible to link several functions together
+iris %>% filter(Species == "setosa",Sepal.Width > 3.8)
+
+
+### tidyr ###
+#tables come in different sizes and shapes
+
+# Pivoting: reformat the table
+TW_corals_long <- TW_corals %>%
+  pivot_longer(Southern_TW:Northern_Is, names_to = "region", values_to = "richness")
+TW_corals_long
+
+# Splitting - Columns
+income_long_var <- income %>% 
+         pivot_longer(cols = -1, names_to = "var1", values_to = "income")
+income_long_var
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
